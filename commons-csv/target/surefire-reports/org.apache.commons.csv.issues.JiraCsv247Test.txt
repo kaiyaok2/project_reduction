@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.commons.csv.issues.JiraCsv247Test
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! -- in org.apache.commons.csv.issues.JiraCsv247Test
+org.apache.commons.csv.issues.JiraCsv247Test.testHeadersMissingOneColumnWhenAllowingMissingColumnNames -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.NullPointerException
+	at org.apache.commons.csv.issues.JiraCsv247Test.testHeadersMissingOneColumnWhenAllowingMissingColumnNames(JiraCsv247Test.java:48)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+

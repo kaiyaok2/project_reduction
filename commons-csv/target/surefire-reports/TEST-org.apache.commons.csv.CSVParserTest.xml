@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.commons.csv.CSVParserTest" time="0.05" tests="111" errors="13" skipped="4" failures="32">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="socksProxyHost" value="127.0.0.1"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="http.proxyHost" value="127.0.0.1"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/kekaiyao/Desktop/PRs/123/commons-csv/target/test-classes:/Users/kekaiyao/Desktop/PRs/123/commons-csv/target/classes:/Users/kekaiyao/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0-M2/junit-jupiter-5.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0-M2/junit-jupiter-api-5.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/kekaiyao/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0-M2/junit-platform-commons-1.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/kekaiyao/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0-M2/junit-jupiter-params-5.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0-M2/junit-jupiter-engine-5.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0-M2/junit-platform-engine-1.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/kekaiyao/.m2/repository/org/mockito/mockito-core/4.11.0/mockito-core-4.11.0.jar:/Users/kekaiyao/.m2/repository/net/bytebuddy/byte-buddy/1.12.19/byte-buddy-1.12.19.jar:/Users/kekaiyao/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.19/byte-buddy-agent-1.12.19.jar:/Users/kekaiyao/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/kekaiyao/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar:/Users/kekaiyao/.m2/repository/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar:/Users/kekaiyao/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/Users/kekaiyao/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/kekaiyao/.m2/repository/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar:/Users/kekaiyao/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/kekaiyao/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:"/>
+    <property name="https.proxyPort" value="10900"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="rat.skip" value="true"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk@11/11.0.16.1_1/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/kekaiyao/Desktop/PRs/123/commons-csv/target/surefire/surefirebooter-20240624220912026_3.jar /Users/kekaiyao/Desktop/PRs/123/commons-csv/target/surefire 2024-06-24T22-09-11_977-jvmRun1 surefire-20240624220912026_1tmp surefire_0-20240624220912026_2tmp"/>
+    <property name="http.nonProxyHosts" value="on|*.on|local|*.local|169.254/16|*.169.254/16|10.0/8|*.10.0/8|172.16/12|*.172.16/12|192.168/16|*.192.168/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/kekaiyao/Desktop/PRs/123/commons-csv/target/test-classes:/Users/kekaiyao/Desktop/PRs/123/commons-csv/target/classes:/Users/kekaiyao/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0-M2/junit-jupiter-5.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0-M2/junit-jupiter-api-5.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/kekaiyao/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0-M2/junit-platform-commons-1.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/kekaiyao/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0-M2/junit-jupiter-params-5.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0-M2/junit-jupiter-engine-5.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0-M2/junit-platform-engine-1.11.0-M2.jar:/Users/kekaiyao/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/kekaiyao/.m2/repository/org/mockito/mockito-core/4.11.0/mockito-core-4.11.0.jar:/Users/kekaiyao/.m2/repository/net/bytebuddy/byte-buddy/1.12.19/byte-buddy-1.12.19.jar:/Users/kekaiyao/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.19/byte-buddy-agent-1.12.19.jar:/Users/kekaiyao/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/kekaiyao/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar:/Users/kekaiyao/.m2/repository/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar:/Users/kekaiyao/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/Users/kekaiyao/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/kekaiyao/.m2/repository/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar:/Users/kekaiyao/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/kekaiyao/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/kekaiyao"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-08-12"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk@11/11.0.16.1_1/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="https.proxyHost" value="127.0.0.1"/>
+    <property name="basedir" value="/Users/kekaiyao/Desktop/PRs/123/commons-csv"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/kekaiyao/Desktop/PRs/123/commons-csv/target/surefire/surefirebooter-20240624220912026_3.jar"/>
+    <property name="user.script" value="Hans"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="on|*.on|local|*.local|169.254/16|*.169.254/16|10.0/8|*.10.0/8|172.16/12|*.172.16/12|192.168/16|*.192.168/16"/>
+    <property name="java.runtime.version" value="11.0.16.1+0"/>
+    <property name="user.name" value="kekaiyao"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="12.3"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/kekaiyao/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/0d/4zk071hd1xx8wrj3n0f4lngh0000gn/T/"/>
+    <property name="java.version" value="11.0.16.1"/>
+    <property name="user.dir" value="/Users/kekaiyao/Desktop/PRs/123/commons-csv"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="socksProxyPort" value="10010"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/kekaiyao/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="11.0.16.1+0"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="socksNonProxyHosts" value="on|*.on|local|*.local|169.254/16|*.169.254/16|10.0/8|*.10.0/8|172.16/12|*.172.16/12|192.168/16|*.192.168/16"/>
+    <property name="http.proxyPort" value="10900"/>
+  </properties>
+  <testcase name="testGetHeaderComment_HeaderComment1" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testGetHeaderComment_HeaderComment2" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetHeaderComment_HeaderComment3" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testBackslashEscapingOld" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <skipped message="public void org.apache.commons.csv.CSVParserTest.testBackslashEscapingOld() throws java.io.IOException is @Disabled"/>
+  </testcase>
+  <testcase name="testParseWithDelimiterWithQuote" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testCSV141CSVFormat_DEFAULT" classname="org.apache.commons.csv.CSVParserTest" time="0.002"/>
+  <testcase name="testStartWithEmptyLinesThenHeaders" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <skipped message="public void org.apache.commons.csv.CSVParserTest.testStartWithEmptyLinesThenHeaders() throws java.lang.Exception is @Disabled"/>
+  </testcase>
+  <testcase name="testExcelHeaderCountLessThanData" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testHeadersWithNullColumnName" classname="org.apache.commons.csv.CSVParserTest" time="0.006">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testHeadersWithNullColumnName(CSVParserTest.java:988)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testMultipleIterators" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testMultipleIterators(CSVParserTest.java:1171)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testHeaderComment" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testHeaderComment(CSVParserTest.java:923)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testGetHeaderComment_HeaderTrailerComment" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testDefaultFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:31)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:231)
+	at org.apache.commons.csv.CSVParserTest.testDefaultFormat(CSVParserTest.java:391)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testCSV141CSVFormat_INFORMIX_UNLOAD_CSV" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testEndOfFileBehaviorExcel" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;3&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <3> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testEndOfFileBehaviorExcel(CSVParserTest.java:502)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testGetRecordPositionWithCRLF" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testHeaderMissing" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testHeaderMissing(CSVParserTest.java:942)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testGetHeaderComment_NoComment1" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetHeaderComment_NoComment2" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetHeaderComment_NoComment3" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testTrailingDelimiter" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testTrailingDelimiter(CSVParserTest.java:1511)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testNotValueCSV" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetTrailerComment_MultilineComment" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testGetTrailerComment_MultilineComment(CSVParserTest.java:891)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testParseWithDelimiterStringWithQuote" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testBOM" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <skipped message="CSV-107"/>
+  </testcase>
+  <testcase name="testFirstEndOfLineCrLf" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;4&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <4> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testFirstEndOfLineCrLf(CSVParserTest.java:570)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testProvidedHeaderAuto" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testProvidedHeaderAuto(CSVParserTest.java:1385)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testGetRecordWithMultiLineValues" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testParseWithDelimiterStringWithEscape" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testParseNullStringFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testParseWithDelimiterWithEscape" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testSkipSetAltHeaders" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testSkipSetAltHeaders(CSVParserTest.java:1441)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testGetRecordNumberWithCR" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetRecordNumberWithLF" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testCSV57" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testClose" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testClose(CSVParserTest.java:247)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testParse" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testTrim" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testTrim(CSVParserTest.java:1524)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testGetLineNumberWithCR" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetLineNumberWithLF" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testParserUrlNullCharsetFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.002"/>
+  <testcase name="testForEach" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;3&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <3> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testForEach(CSVParserTest.java:592)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testGetOneLine" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <error message="Index 0 out of bounds for length 0" type="java.lang.IndexOutOfBoundsException"><![CDATA[java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:372)
+	at java.base/java.util.ArrayList.get(ArrayList.java:459)
+	at org.apache.commons.csv.CSVParserTest.testGetOneLine(CSVParserTest.java:745)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testGetLineNumberWithCRLF" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testCarriageReturnLineFeedEndings" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;4&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <4> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testCarriageReturnLineFeedEndings(CSVParserTest.java:237)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testMongoDbCsv" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <skipped message="public void org.apache.commons.csv.CSVParserTest.testMongoDbCsv() throws java.lang.Exception is @Disabled"/>
+  </testcase>
+  <testcase name="testGetRecordNumberWithCRLF" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testParseUrlCharsetNullFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testEmptyFile" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetHeaderNames" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testCarriageReturnEndings" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <failure message="expected: &lt;4&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <4> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testCarriageReturnEndings(CSVParserTest.java:228)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testParseWithQuoteThrowsException" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetLine" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testIgnoreCaseHeaderMapping" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testIgnoreCaseHeaderMapping(CSVParserTest.java:1000)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testGetRecordPositionWithLF" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetOneLineOneParser" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testHeadersMissingException" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetHeaderNamesReadOnly" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testCSV141CSVFormat_INFORMIX_UNLOAD" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testDuplicateHeadersAllowedByDefault" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testProvidedHeader" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testProvidedHeader(CSVParserTest.java:1362)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testCSV141CSVFormat_ORACLE" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testIteratorSequenceBreaking" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testSkipHeaderOverrideDuplicateHeaders" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testSkipHeaderOverrideDuplicateHeaders(CSVParserTest.java:1430)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testRepeatedHeadersAreReturnedInCSVRecordHeaderNames" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testRepeatedHeadersAreReturnedInCSVRecordHeaderNames(CSVParserTest.java:1407)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testEmptyLineBehaviorCSV" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;1&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testEmptyLineBehaviorCSV(CSVParserTest.java:441)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testParseNullUrlCharsetFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testInvalidFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testCSV141CSVFormat_POSTGRESQL_CSV" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testBackslashEscaping2" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:31)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:231)
+	at org.apache.commons.csv.CSVParserTest.testBackslashEscaping2(CSVParserTest.java:184)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testExcelFormat1" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <failure message="expected: &lt;5&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <5> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testExcelFormat1(CSVParserTest.java:518)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testExcelFormat2" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;5&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <5> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testExcelFormat2(CSVParserTest.java:532)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testDuplicateHeadersNotAllowed" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testEmptyString" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testNoHeaderMap" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testParseFileNullFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testParseWithQuoteWithEscape" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetTrailerComment_HeaderComment1" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetTrailerComment_HeaderComment2" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testGetTrailerComment_HeaderComment3" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testGetHeaderMap" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testGetHeaderMap(CSVParserTest.java:682)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testBackslashEscaping" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:31)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:231)
+	at org.apache.commons.csv.CSVParserTest.testBackslashEscaping(CSVParserTest.java:158)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testThrowExceptionWithLineAndPosition" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <failure message="Expected java.io.UncheckedIOException to be thrown, but nothing was thrown." type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Expected java.io.UncheckedIOException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at org.apache.commons.csv.CSVParserTest.testThrowExceptionWithLineAndPosition(CSVParserTest.java:1500)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testLineFeedEndings" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <failure message="expected: &lt;4&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <4> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testLineFeedEndings(CSVParserTest.java:1105)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testGetTrailerComment_HeaderTrailerComment1" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testGetTrailerComment_HeaderTrailerComment1(CSVParserTest.java:864)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testGetTrailerComment_HeaderTrailerComment2" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testGetTrailerComment_HeaderTrailerComment2(CSVParserTest.java:873)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testGetTrailerComment_HeaderTrailerComment3" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testGetTrailerComment_HeaderTrailerComment3(CSVParserTest.java:882)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testParseNullPathFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testMappedButNotSetAsOutlook2007ContactExport" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testMappedButNotSetAsOutlook2007ContactExport(CSVParserTest.java:1118)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testSkipSetHeader" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testSkipSetHeader(CSVParserTest.java:1453)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testHeaderMissingWithNull" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testIgnoreEmptyLines" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;3&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <3> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testIgnoreEmptyLines(CSVParserTest.java:1012)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testCSV235" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testCSV235(CSVParserTest.java:360)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testEndOfFileBehaviorCSV" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;2&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <2> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testEndOfFileBehaviorCSV(CSVParserTest.java:483)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testNewCSVParserNullReaderFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testEmptyLineBehaviorExcel" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <failure message="expected: &lt;3&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <3> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testEmptyLineBehaviorExcel(CSVParserTest.java:458)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testParseStringNullFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testHeader" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testHeader(CSVParserTest.java:904)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testGetRecords" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;4&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <4> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testGetRecords(CSVParserTest.java:799)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testHeadersMissing" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testCSV141RFC4180" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testFirstEndOfLineCr" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;4&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <4> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testFirstEndOfLineCr(CSVParserTest.java:560)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testFirstEndOfLineLf" classname="org.apache.commons.csv.CSVParserTest" time="0.001">
+    <failure message="expected: &lt;4&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <4> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at org.apache.commons.csv.CSVParserTest.testFirstEndOfLineLf(CSVParserTest.java:580)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testEmptyFileHeaderParsing" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testStream" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
+	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:31)
+	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:231)
+	at org.apache.commons.csv.CSVParserTest.testStream(CSVParserTest.java:1482)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testCSV141Excel" classname="org.apache.commons.csv.CSVParserTest" time="0.001"/>
+  <testcase name="testIterator" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at org.apache.commons.csv.CSVParserTest.testIterator(CSVParserTest.java:1028)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></failure>
+  </testcase>
+  <testcase name="testHeadersMissingOneColumnException" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testParseNullFileFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+  <testcase name="testSkipAutoHeader" classname="org.apache.commons.csv.CSVParserTest" time="0.0">
+    <error type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException
+	at org.apache.commons.csv.CSVParserTest.testSkipAutoHeader(CSVParserTest.java:1418)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+]]></error>
+  </testcase>
+  <testcase name="testNewCSVParserReaderNullFormat" classname="org.apache.commons.csv.CSVParserTest" time="0.0"/>
+</testsuite>
