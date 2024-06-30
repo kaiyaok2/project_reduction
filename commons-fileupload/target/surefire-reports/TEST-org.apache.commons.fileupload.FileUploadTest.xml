@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.commons.fileupload.FileUploadTest" time="0.007" tests="1" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="socksProxyHost" value="127.0.0.1"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="http.proxyHost" value="127.0.0.1"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/kekaiyao/Desktop/PRs/123/java_projects/commons-fileupload/target/test-classes:/Users/kekaiyao/Desktop/PRs/123/java_projects/commons-fileupload/target/classes:/Users/kekaiyao/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/kekaiyao/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/kekaiyao/.m2/repository/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar:/Users/kekaiyao/.m2/repository/portlet-api/portlet-api/1.0/portlet-api-1.0.jar:/Users/kekaiyao/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:"/>
+    <property name="https.proxyPort" value="10900"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value=""/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="rat.skip" value="true"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk@11/11.0.16.1_1/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/kekaiyao/Desktop/PRs/123/java_projects/commons-fileupload/target/surefire/surefirebooter-20240701032712302_3.jar /Users/kekaiyao/Desktop/PRs/123/java_projects/commons-fileupload/target/surefire 2024-07-01T03-27-12_218-jvmRun1 surefire-20240701032712302_1tmp surefire_0-20240701032712302_2tmp"/>
+    <property name="http.nonProxyHosts" value="on|*.on|local|*.local|169.254/16|*.169.254/16|10.0/8|*.10.0/8|172.16/12|*.172.16/12|192.168/16|*.192.168/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/kekaiyao/Desktop/PRs/123/java_projects/commons-fileupload/target/test-classes:/Users/kekaiyao/Desktop/PRs/123/java_projects/commons-fileupload/target/classes:/Users/kekaiyao/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/kekaiyao/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/kekaiyao/.m2/repository/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar:/Users/kekaiyao/.m2/repository/portlet-api/portlet-api/1.0/portlet-api-1.0.jar:/Users/kekaiyao/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/kekaiyao"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-08-12"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk@11/11.0.16.1_1/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="https.proxyHost" value="127.0.0.1"/>
+    <property name="basedir" value="/Users/kekaiyao/Desktop/PRs/123/java_projects/commons-fileupload"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="checkstyle.skip" value="true"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/kekaiyao/Desktop/PRs/123/java_projects/commons-fileupload/target/surefire/surefirebooter-20240701032712302_3.jar"/>
+    <property name="user.script" value="Hans"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="on|*.on|local|*.local|169.254/16|*.169.254/16|10.0/8|*.10.0/8|172.16/12|*.172.16/12|192.168/16|*.192.168/16"/>
+    <property name="java.runtime.version" value="11.0.16.1+0"/>
+    <property name="user.name" value="kekaiyao"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="12.3"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/kekaiyao/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/0d/4zk071hd1xx8wrj3n0f4lngh0000gn/T/"/>
+    <property name="java.version" value="11.0.16.1"/>
+    <property name="user.dir" value="/Users/kekaiyao/Desktop/PRs/123/java_projects/commons-fileupload"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="socksProxyPort" value="10010"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="manifest.skip" value="true"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/kekaiyao/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="11.0.16.1+0"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="socksNonProxyHosts" value="on|*.on|local|*.local|169.254/16|*.169.254/16|10.0/8|*.10.0/8|172.16/12|*.172.16/12|192.168/16|*.192.168/16"/>
+    <property name="http.proxyPort" value="10900"/>
+  </properties>
+  <testcase name="initializationError" classname="org.apache.commons.fileupload.FileUploadTest" time="0.004">
+    <error message="No public static parameters method on class org.apache.commons.fileupload.FileUploadTest" type="java.lang.Exception"><![CDATA[java.lang.Exception: No public static parameters method on class org.apache.commons.fileupload.FileUploadTest
+	at org.junit.runners.Parameterized$RunnersFactory.getParametersMethod(Parameterized.java:451)
+	at org.junit.runners.Parameterized$RunnersFactory.<init>(Parameterized.java:371)
+	at org.junit.runners.Parameterized$RunnersFactory.<init>(Parameterized.java:360)
+	at org.junit.runners.Parameterized.<init>(Parameterized.java:303)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:37)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.requests.ClassRequest.createRunner(ClassRequest.java:28)
+	at org.junit.internal.requests.MemoizingRequest.getRunner(MemoizingRequest.java:19)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:374)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:284)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:248)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:167)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]></error>
+  </testcase>
+</testsuite>
