@@ -22,9 +22,9 @@ method_regex = (
     r'(public|private|protected|static|synchronized|final|abstract|native|transient|volatile|strictfp)?\s*'
     r'(public|private|protected|static|synchronized|final|abstract|native|transient|volatile|strictfp)?\s*'
     r'(<[\w\s,?<>]+>\s*)?'
-    r'[\w<>\[\]]+\s+'
+    r'[\w<>\[\],\s?]+[\w\s,<>.\[\]?]*\s+'
     r'(\w+)\s*'
-    r'\([^)]*\)\s*'
+    r'\(\s*([\w\s,<>\[\].?]*?)\s*\)\s*'
     r'(throws\s+[\w.<>,\s]+)?\s*'
     r'\{'
 )
@@ -49,7 +49,7 @@ def identify_current_project_packages(source_code_path):
             if file.endswith('.java'):
                 file_count += 1
                 file_path = os.path.join(root, file)
-                with open(file_path, 'r') as f:
+                with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                     lines = f.readlines()
                 for line in lines:
                     package_match = re.match(r'package\s+([\w.]+);', line)
@@ -67,7 +67,7 @@ def identify_third_party_packages(source_code_path, current_project_packages):
         for file in files:
             if file.endswith('.java'):
                 file_path = os.path.join(root, file)
-                with open(file_path, 'r') as f:
+                with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                     lines = f.readlines()
                 for line in lines:
                     import_match = re.match(r'import\s+(static\s+)?([\w.]+(\.\*)?);', line)
@@ -94,7 +94,7 @@ def identify_override_methods(source_code_path):
                 class_base_path = class_path.split("$")[0]
 
 
-                with open(file_path, 'r') as f:
+                with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                     lines = f.readlines()
                     outer_class_brace_level = 0
                     inner_class_brace_level = 0
@@ -113,16 +113,23 @@ def identify_override_methods(source_code_path):
                             inside_outer_class = True
                         
                         if line.strip() == "@Override":
-                            method_match = re.match(
-                                method_regex,
-                                lines[i + 1]
-                            )
-                            if method_match:
-                                method_signature = method_match.group(5)
-                                full_method_name = class_base_path +\
-                                    (("$" + class_path.split('$')[1]) if ('$' in class_path) else '') +\
-                                    ":" + method_signature
-                                override_methods.add(full_method_name)
+                            next_lines = ''
+                            next_line_num = i + 1
+                            for k in range(max_multiline - 1):
+                                next_lines += lines[next_line_num]
+                                next_line_num += 1
+
+                                method_match = re.match(
+                                    method_regex,
+                                    next_lines
+                                )
+                                if method_match:
+                                    method_signature = method_match.group(5)
+                                    full_method_name = class_base_path +\
+                                        (("$" + class_path.split('$')[1]) if ('$' in class_path) else '') +\
+                                        ":" + method_signature
+                                    override_methods.add(full_method_name)
+                                    break
                         
 
                         if inside_outer_class:
@@ -157,7 +164,7 @@ def parse_callgraph(callgraph_file):
                 callee_method = re.sub(r'\$\d+', '', re.sub(r'lambda\$', '', callee_method))
                 call_graph.append((caller_method, callee_method))
                 caller_params = caller.split("(")[1].split(")")[0].split(",")
-                callee_params = callee.split("(")[1].split(")")[0].split(",")
+                callee_params = callee.split(")")[1].split("(")[1].split(")")[0].split(",")
                 if caller_method in method_param_map:
                     method_param_map[caller_method].update(caller_params)
                 else:
@@ -215,6 +222,16 @@ def identify_third_party_dependencies(call_graph, third_party_packages, override
                 classes_to_remove.add(caller_class)
 
         for caller_method, callee_method in call_graph:
+            caller_class = caller_method.split(":")[0]
+            callee_class = callee_method.split(":")[0]
+            classes_to_remove_copy = classes_to_remove.copy()
+            for class_to_remove in classes_to_remove_copy:
+                if caller_class.split("$")[0] == class_to_remove:
+                    classes_to_remove.add(caller_class)
+                if callee_class.split("$")[0] == class_to_remove:
+                    classes_to_remove.add(callee_class)                
+
+        for caller_method, callee_method in call_graph:
             callee_class = callee_method.split(":")[0]
             caller_class = caller_method.split(":")[0]
             if (callee_method == method) or (caller_class in classes_to_remove):
@@ -236,7 +253,7 @@ def identify_third_party_dependencies(call_graph, third_party_packages, override
 
             callee_class = callee_method.split(":")[0]
             for callee_param in method_param_map[callee_method]:
-                if callee_param in classes_to_remove:
+                if (callee_param in classes_to_remove) or (callee_param in third_party_packages):
                     if callee_class in dependent_class_methods:
                         dependent_class_methods[callee_class].add(callee_method)
                     else:
@@ -258,7 +275,7 @@ def identify_third_party_dependencies(call_graph, third_party_packages, override
             
             caller_class = caller_method.split(":")[0]
             for caller_param in method_param_map[caller_method]:
-                if caller_param in classes_to_remove:
+                if (caller_param in classes_to_remove) or (caller_param in third_party_packages):
                     if caller_class in dependent_class_methods:
                         dependent_class_methods[caller_class].add(caller_method)
                     else:
@@ -302,13 +319,13 @@ def refactor_code(source_code_path, dependent_class_methods, third_party_package
                 
                 print(f"Refactoring {class_path}")
 
-                with open(file_path, 'r') as f:
+                with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                     lines = f.readlines()
 
                 with open(file_path, 'w') as f:
                     skip_class = False
                     for class_to_remove in classes_to_remove:
-                        if class_to_remove.split("$")[0] == class_base_path:
+                        if class_to_remove == class_base_path:
                             placeholder_written = False
                             skip_class = True
                             package, _, _ = class_base_path.rpartition('.')
@@ -337,6 +354,7 @@ def refactor_code(source_code_path, dependent_class_methods, third_party_package
                     skip_lines = 0
                     inside_outer_class = False
                     inside_inner_class = False
+                    skipping_inner_class = False
                     multiline = None
                     match_some_header = False
                     annotation_cached = False
@@ -353,7 +371,7 @@ def refactor_code(source_code_path, dependent_class_methods, third_party_package
                             imported = import_match.group(2)
                             if (any(imported.startswith(third_pkg) for third_pkg in third_party_packages)) \
                                 or (any(imported.startswith(dep_method.replace(":", ".").replace("$", ".")) for dep_method in third_party_packages)) \
-                                or (any(imported.startswith(class_to_remove.replace("$", ".")) for class_to_remove in classes_to_remove)):
+                                or (any((imported == class_to_remove.replace("$", ".")) for class_to_remove in classes_to_remove)):
                                 continue
                         
                         match_some_header = False
@@ -368,6 +386,12 @@ def refactor_code(source_code_path, dependent_class_methods, third_party_package
                                     skip_lines += j
                                     inner_class_name = inner_class_match.group(4)
                                     class_path += ('$' + inner_class_name)
+                                    for class_to_remove in classes_to_remove:
+                                        if "$" in class_to_remove:
+                                            parts = class_to_remove.split('$')
+                                            if (parts[0] + "$" + parts[1]) == class_path:
+                                                skipping_inner_class = True
+                                    break
                             
                             if re.match(class_regex, multiline) and (not inside_outer_class):
                                 inside_outer_class = True
@@ -375,7 +399,7 @@ def refactor_code(source_code_path, dependent_class_methods, third_party_package
                                 skip_lines += j
                             
                             if j == 0:
-                                if re.match(r'\s*@\w+', multiline) and not inside_method:
+                                if re.match(r'\s*@\w+(\([^()]*\))?', multiline) and not inside_method:
                                     annotation_buffer.append(multiline)
                                     annotation_cached = True
                                     if i + j < len(lines):
@@ -388,8 +412,10 @@ def refactor_code(source_code_path, dependent_class_methods, third_party_package
                                         next_lines = ''
                                         for k in range(max_multiline - 1):
                                             next_lines += lines[next_line_num] #(lines[next_line_num].strip() + " ")
-                                            next_line_num += 1
-
+                                            if (next_line_num + 1) < len(lines):
+                                                next_line_num += 1
+                                            else:
+                                                break
                                             method_match = re.match(
                                                 method_regex,
                                                 next_lines
@@ -399,7 +425,10 @@ def refactor_code(source_code_path, dependent_class_methods, third_party_package
                                                 full_method_name = class_base_path +\
                                                     (("$" + class_path.split('$')[1]) if ('$' in class_path) else '') +\
                                                     ":" + method_signature
-                                                if full_method_name in methods_to_remove:
+                                                exceptions_thrown = method_match.group(7).split("throws")[1].split(",") if method_match.group(7) != None else []
+                                                exceptions_thrown_cleaned = [exception.strip() for exception in exceptions_thrown]
+                                                classes_names_to_remove = [path.replace("$", ".").split(".")[-1] for path in classes_to_remove]
+                                                if (full_method_name in methods_to_remove) or any(ex in classes_names_to_remove for ex in exceptions_thrown_cleaned):
                                                     match_some_header = True
                                                     annotation_buffer = []
                                                     annotation_cached = False
@@ -435,7 +464,8 @@ def refactor_code(source_code_path, dependent_class_methods, third_party_package
                         
                         if annotation_buffer:
                             for annotation in annotation_buffer:
-                                f.write(annotation)
+                                if not skipping_inner_class:
+                                    f.write(annotation)
                             annotation_buffer = []
                             annotation_cached = False
                         
@@ -466,9 +496,15 @@ def refactor_code(source_code_path, dependent_class_methods, third_party_package
                             if inner_class_brace_level == 0:
                                 inside_inner_class = False
                                 class_path = class_path.split('$')[0]
+                                if skipping_inner_class:
+                                    skipping_inner_class = False
+                                    continue
 
                         if remove_line:
                             remove_line = False
+                            continue
+
+                        if skipping_inner_class:
                             continue
 
                         f.write(multiline)
@@ -487,4 +523,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
